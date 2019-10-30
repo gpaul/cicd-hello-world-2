@@ -62,6 +62,7 @@ task "deploy": {
       workingDir: "/workspace/gitops-git"
       args: [
         "-git-revision=$(context.git.commit)",
+        "--force-push",
         "-substitute=imageName=gpaul/hello-world-2@$(inputs.resources.docker-image.digest)"
       ]
     }
